@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vad vet vi om Emma?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+    #text-container {
+        height: 120px;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 360px;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: 'Exo', sans-serif;
+    }
+
+    .context {
+        width: 100%;
+        position: absolute;
+        top:50vh;
+    }
+
+    .context h1 {
+        text-align: center;
+        border-radius: 15px;
+        padding: 20px;
+        color: #fbde8f;
+        font-size: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .area {
+        background: #4e54c8;  
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+        width: 100%;
+        height:100vh;
+    }
+
+    .rectangles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .rectangles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+    }
+
+    .rectangles li:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+    .rectangles li:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+
+    .rectangles li:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+    }
+
+    .rectangles li:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+    }
+
+    .rectangles li:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+    }
+
+    .rectangles li:nth-child(6) {
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+
+    .rectangles li:nth-child(7) {
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+
+    .rectangles li:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+    }
+
+    .rectangles li:nth-child(9) {
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+    }
+
+    .rectangles li:nth-child(10) {
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+    }
+
+    @keyframes animate {
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="context">
+    <h1 id="text-container"></h1>
+  </div>
+
+  <div class="area" >
+    <ul class="rectangles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div >
+  <script>
+    const quotes = [
+      'Emma är jävligt snäll, ibland för snäll för sitt eget bästa',
+      'Emma gör alla runt omkring henne gladare',
+      'Emma dricker öl väldigt snabbt',
+      'Emma är sjukt duktig på att måla och rita',
+      'Emma gillar den färg som nästan ingen annan gillar, gul',
+      'Emma är alltid väldigt taggad när man ska hitta på någonting',
+      'Emma är supersnygg',
+      'Emma vet hur man fixar de bästa utklädnaderna',
+      'Emma kan pimpa ansikten med färg och smink',
+      'Emma vågar vara galen på dansgolvet',
+      'Emma gillar djur, trots att hon är allergisk mot många',
+      'Emma förstår inte hur lätt hon är att gilla, särskilt när hon träffar nya människor',
+      'Emma är väldigt söt när man kollar på henne och hon inte märker',
+      'Emma lagar supergod mat!',
+      'Emma är smart, trots att hon ibland inte verkar tro det',
+      'Emma tar hand om sina vänner',
+      'Emma har en snygg klädstil',
+      'Emma är väldigt ogenerad runt nakenhet, sä borde fler vara',
+      'Emma kan alltid skjutsa folk på sin cykel',
+      'Emma är en väldigt mysig person',
+      'Emma är otroligt bra att spoona med',
+      'Emma är bra i sängen',
+      'Emma gillar disneyfilmer',
+      'Emma snarkar ibland, men på ett väldigt sött och ostörande sätt',
+      'Emma kan vara spontan, även fast hon gillar att planera',
+      'Emma tycker att allt ska skrivas i listform',
+      'Emma har jättefint hår',
+      'Emma är duktig på att kramas',
+      'Emma har sett alla säsonger av Vänner',
+      'Emma somnar ibland (ganska ofta) när man kollar på film',
+      'Emma vet hur man efterfestar!',
+      'Emma är inte särskilt kräsen, på ett bra sätt',
+      'Emma har en jävligt snygg kropp, särskilt i kombination med hur hon rör sig',
+      'Emma klagar inte när det inte behövs',
+      'Emma tror att hon inte är kittlig',
+      'Emma ger mycket kärlek till de omkring sig',
+      'Nästan alla tycker om Emma (har inte träffat någon som inte gör det än)',
+      'Emma gillar inte att duscha, det gör att man får mer duschvatten till sig själv',
+      'Emma tycker om stark mat, det är positivt eftersom det är enda rätta åsikten',
+      'Emma är bra på att dansa',
+      'Emma tycker inte om indisk mat, men vi tycker om henne ändå',
+      'Emma har bra smak när det kommer till serier',
+      'Emma gillar ibland alldeles för cheesy filmer',
+      'Emma är duktig på att åka skidor',
+      'Emma har alltid idéer på vad man kan laga för mat',
+      'Emma är ingen badkruka',
+      'Emma kan typ gå ner i split och i brygga',
+      'Emma vet hur man bygger en godiskaktus',
+      'Emma är omtänksam',
+      'Emma har superlen hud',
+      'Man kan vara tyst tillsammans med Emma utan att det blir stel stämning',
+      'Emma har ganska mycket FOMO, men det gör också att hon är på det mesta',
+    ];
+    const quoteNumber = Math.floor(Math.random() * quotes.length);
+    document.getElementById('text-container').innerText = quotes[quoteNumber];
+  </script>
+</body>
+
+</html>
